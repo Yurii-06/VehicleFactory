@@ -6,16 +6,23 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 @Component
 public class Car implements Vehicle {
-    String type;
+    private String type;
 
-    public Car() {}
+    public Car() {
+        this.type = "unknown";
+    }
 
     public Car(String type) {
         this.type = type;
     }
 
     public void go() {
-        System.out.println("start engine and go");
+        System.out.println("start engine...go!");
+    }
+
+    @Override
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override

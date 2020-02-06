@@ -1,33 +1,29 @@
 package factory;
 
+import factory.cars.FactoryType;
+import factory.cars.Vehicle;
+import factory.config.Config;
 import factory.impl.FactoryProvider;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-//        ctx.register(Config.class);
-        ctx.scan("factory");
-        ctx.refresh();
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 
-//        VehicleFactory factory = ctx.getBean(BicycleFactory.class);
-//        VehicleFactory carFactory = ctx.getBean(CarFactory.class);
-//
-//        final var carFactoryVehicle = carFactory.createVehicle();
-//        System.out.println(carFactoryVehicle.toString());
-//        carFactoryVehicle.go();
-//
-//
-//        final var vehicle = factory.createVehicle();
-//        final var vehicle2 = factory.createVehicle();
-//        System.out.println(vehicle.toString());
-//        System.out.println(vehicle2.toString());
-//        vehicle.go();
+        FactoryType carFactoryType = FactoryType.CAR;
+        FactoryType bicycleFactoryType = FactoryType.BICYCLE;
 
         final var bean = ctx.getBean(FactoryProvider.class);
-        final var car = bean.getFactory("car");
-        car.createVehicle().go();
+        final var carFactory = bean.getFactory(carFactoryType);
+        final var bicycleFactory = bean.getFactory(bicycleFactoryType);
 
+        Vehicle car = carFactory.createVehicle();
+        Vehicle bicycle = bicycleFactory.createVehicle();
 
+        car.setType("Truck");
+        bicycle.setType("Mountain");
+
+        car.go();
+        bicycle.go();
     }
 }

@@ -15,7 +15,7 @@ public class CarFactory implements VehicleFactory {
     }
 
     @Lookup
-    private Car getCar() {
-        return new Car("Mersedes");
+    public Car getCar() {
+        return null;
     }
 }
