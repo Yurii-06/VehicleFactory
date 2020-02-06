@@ -1,12 +1,12 @@
-package factory;
+package ua.proky;
 
-import factory.cars.FactoryType;
-import factory.cars.Vehicle;
-import factory.config.Config;
-import factory.impl.FactoryProvider;
+import ua.proky.util.FactoryType;
+import ua.proky.vehicle.Vehicle;
+import ua.proky.config.Config;
+import ua.proky.util.FactoryProvider;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class Main {
+public class Runner {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 

@@ -1,7 +1,6 @@
-package factory.impl;
+package ua.proky.util;
 
-import factory.cars.FactoryType;
-import factory.cars.VehicleFactory;
+import ua.proky.factory.VehicleFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
