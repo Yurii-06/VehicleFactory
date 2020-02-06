@@ -1,10 +1,8 @@
-package factory.impl;
+package ua.proky.factory;
 
-import factory.cars.Car;
-import factory.cars.Vehicle;
-import factory.cars.VehicleFactory;
+import ua.proky.vehicle.Car;
+import ua.proky.vehicle.Vehicle;
 import org.springframework.beans.factory.annotation.Lookup;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Component;
 
 @Component(value = "carFactory")

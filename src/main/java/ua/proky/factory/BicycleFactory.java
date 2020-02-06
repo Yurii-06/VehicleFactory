@@ -1,8 +1,7 @@
-package factory.impl;
+package ua.proky.factory;
 
-import factory.cars.Bicycle;
-import factory.cars.Vehicle;
-import factory.cars.VehicleFactory;
+import ua.proky.vehicle.Bicycle;
+import ua.proky.vehicle.Vehicle;
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.stereotype.Component;
 

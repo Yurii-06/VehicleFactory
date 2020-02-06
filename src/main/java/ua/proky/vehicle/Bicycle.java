@@ -1,4 +1,4 @@
-package factory.cars;
+package ua.proky.vehicle;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -6,18 +6,16 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 @Component
 public class Bicycle implements Vehicle {
-    private String type;
+    private String type = "unknown";
 
-    public Bicycle() {
-        this.type = "unknown";
-    }
+    public Bicycle() {}
 
     public Bicycle(String type) {
         this.type = type;
     }
 
     public void go() {
-        System.out.println("spin pedals...go!");
+        System.out.println("spin bicycle pedals...go!");
     }
 
     public String getType() {
