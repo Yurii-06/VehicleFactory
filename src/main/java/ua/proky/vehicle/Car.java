@@ -1,10 +1,5 @@
 package ua.proky.vehicle;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
-@Scope("prototype")
-@Component
 public class Car implements Vehicle {
     private String type = "unknown";
 

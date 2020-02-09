@@ -20,6 +20,9 @@ public class Runner {
         Vehicle car = carFactory.createVehicle();
         Vehicle bicycle = bicycleFactory.createVehicle();
 
+        System.out.println(car.toString());
+        System.out.println(bicycle.toString());
+
         car.setType("Truck");
         bicycle.setType("Mountain");
 
